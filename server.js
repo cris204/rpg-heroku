@@ -18,16 +18,14 @@ var config = {
   database: 'rpg', //env var: PGDATABASE
   password: 'cris0717', //env var: PGPASSWORD
   host: 'localhost', // Server hosting the postgres database
-  port: 5432, //env var: PGPORT
+  port: 5432 ||3000, //env var: PGPORT
 
 };
-
-var port = process.env.ELEPHANTSQL_URL || 3000;
 
 var app = express();
 
 
-var client = new pg.Client();
+var client = new pg.Client(config);
 
 
 
@@ -95,10 +93,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-app.listen(port, function() {
-  console.log('App start listen!');
 });
 
 module.exports = app;

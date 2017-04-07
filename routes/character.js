@@ -9,12 +9,12 @@ var config = {
   database: 'rpg', //env var: PGDATABASE
   password: 'cris0717', //env var: PGPASSWORD
   host: 'localhost', // Server hosting the postgres database
-  port: 5432, //env var: PGPORT
+  port: 5432 ||3000, //env var: PGPORT
 };
 
-  var client = new pg.Client();
+  var client = new pg.Client(config);
 router.get('/:user_id?', function(req, res, next) {
-  var client = new pg.Client();
+  var client = new pg.Client(config);
   var query = url.parse(req.url,true).query;
   char_id = req.params.user_id;
 
