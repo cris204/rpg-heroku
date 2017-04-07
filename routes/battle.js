@@ -34,7 +34,7 @@ router.get('/:users_id?', function(req, res, next) {
   var score1 = query.score1;
   var score2 = query.score2;
   var query_data=[];
-  client = new pg.Client();
+  client = new pg.Client(config);
   client.connect (function (err, client, done){
     if (err){return console.error('error runnning query', err);}
     if(users_id)
