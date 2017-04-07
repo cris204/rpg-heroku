@@ -14,17 +14,17 @@ var character = require('./routes/character');
 var battle = require('./routes/battle');
 
 var config = {
-  user: 'postgres', //env var: PGUSER
-  database: 'rpg', //env var: PGDATABASE
-  password: 'cris0717', //env var: PGPASSWORD
-  host: 'localhost', // Server hosting the postgres database
+  user: 'neythggc', //env var: PGUSER
+  database: 'neythggc', //env var: PGDATABASE
+  password: 'SxB8mbKS7G_LukO8regsFmmwd1CUfeff', //env var: PGPASSWORD
+  host: 'stampy.db.elephantsql.com', // Server hosting the postgres database
   port: 5432, //env var: PGPORT
 };
 
 var app = express();
 
 
-var client = new pg.Client();
+var client = new pg.Client(config);
 
 
 

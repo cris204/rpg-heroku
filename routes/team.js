@@ -8,20 +8,19 @@ app.use(bodyparser.json());
 app.use (bodyparser.urlencoded({extended:true}));
 var pg = require ('pg');
 
-var item_id;
 
 var config = {
-  user: 'postgres',
-  database: 'rpg',
-  password: 'cris0717',
-  host: 'localhost',
-  port: 5432,
+  user: 'neythggc', //env var: PGUSER
+  database: 'neythggc', //env var: PGDATABASE
+  password: 'SxB8mbKS7G_LukO8regsFmmwd1CUfeff', //env var: PGPASSWORD
+  host: 'stampy.db.elephantsql.com', // Server hosting the postgres database
+  port: 5432, //env var: PGPORT
 };
-var client = new pg.Client();
+var client = new pg.Client(config);
 
 /* GET home page. */
 router.get('/:user_id?', function(req, res, next) {
-  var client = new pg.Client();
+  var client = new pg.Client(config);
   var query = url.parse(req.url,true).query;
   var  id = req.params.user_id;
   var c1=query.c1 ||0;
