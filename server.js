@@ -22,6 +22,8 @@ var config = {
 
 };
 
+var port = process.env.ELEPHANTSQL_URL || 3000;
+
 var app = express();
 
 
@@ -93,6 +95,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.listen(port, function() {
+  console.log('App start listen!');
 });
 
 module.exports = app;
