@@ -12,9 +12,9 @@ var config = {
   port: 5432 ||3000, //env var: PGPORT
 };
 
-  var client = new pg.Client(config);
+  var client = new pg.Client();
 router.get('/:user_id?', function(req, res, next) {
-  var client = new pg.Client(config);
+  var client = new pg.Client();
   var query = url.parse(req.url,true).query;
   char_id = req.params.user_id;
 

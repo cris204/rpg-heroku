@@ -18,14 +18,14 @@ var config = {
   database: 'rpg', //env var: PGDATABASE
   password: 'cris0717', //env var: PGPASSWORD
   host: 'localhost', // Server hosting the postgres database
-  port: 5432 ||3000, //env var: PGPORT
+  port: 5432, //env var: PGPORT
 
 };
 
 var app = express();
 
 
-var client = new pg.Client(config);
+var client = new pg.Client();
 
 
 
