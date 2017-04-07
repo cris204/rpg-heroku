@@ -32,7 +32,7 @@ router.get('/:user_id?', function(req, res, next) {
     var character_id = req.query.character_id;
   var user_id = req.params.user_id;
 
-  
+  //HACER UN QUERY PARA ASQUIRIR EL DI DEL USUARIO QUE DESEA DESBLOQUEAR EL CHARACTER
   if(user_id)
   {
     if(character_id){
@@ -67,7 +67,8 @@ router.get('/:user_id?', function(req, res, next) {
         if (err){
           return console.error('error runnning query', err);
         }
-        res.send(data.rows);
+        var characaters=data.rows;
+        res.send("todos los characters "+'<br>'+ JSON.stringify(characaters));
       });
     }
   }

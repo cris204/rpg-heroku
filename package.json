@@ -19,13 +19,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cris204/inventory.git"
+    "url": "git+https://github.com/cris204/rpg-heroku.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cris204/inventory/issues"
-  },
-  "homepage": "https://github.com/cris204/inventory#readme",
+
   "description": " "
 }
