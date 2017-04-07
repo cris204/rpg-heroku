@@ -59,6 +59,31 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+unlock.get('/:user_id?',function(req,res){
+
+
+});
+stats.get('/:user_id?',function(req,res){
+
+
+});
+
+team.get('/:user_id?',function(req,res){
+
+
+});
+
+battle.get('/:user_id?',function(req,res){
+
+
+});
+
+character.get('/:user_id?',function(req,res){
+
+
+});
+
+
 
 // error handler
 app.use(function(err, req, res, next) {
