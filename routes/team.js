@@ -58,9 +58,9 @@ router.get('/:user_id?', function(req, res, next) {
                         return console.error('error runnning query', err);
                       }
 
-                      if(resultr.rows[0]==null){
-                      res.send("usted no tiene este personaje actualmente o ya lo esta usando");
-                      }else{
+                    //  if(resultr.rows[0]==null){
+                    //  res.send("usted no tiene este personaje actualmente o ya lo esta usando");
+                    //  }else{
 
                           if(resultr.rows[0]!=null&&resultr.rows[1]!=null&&resultr.rows[2]!=null){
                                client.query('UPDATE "team" SET character_id_1 = $1, character_id_2 = $2, character_id_3 = $3 WHERE player_id = $4',[c1,c2,c3,id],function(err,data){
@@ -75,7 +75,7 @@ router.get('/:user_id?', function(req, res, next) {
                       }else{
                           res.send("verifique los character id");
                       }
-                  }
+              //    }
               });
             }
           }
