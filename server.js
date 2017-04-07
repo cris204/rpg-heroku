@@ -26,7 +26,7 @@ var config = {
 var app = express();
 
 
-var client = new pg.Client(config);
+var client = new pg.Client();
 
 
 

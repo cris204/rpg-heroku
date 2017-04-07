@@ -22,7 +22,7 @@ var config = {
 
 /* GET home page. */
 router.get('/:user_id?', function(req, res, next) {
-  var client = new pg.Client(config);
+  var client = new pg.Client();
 
   client.connect(function (err, client, done) {
     if (err){
@@ -32,7 +32,7 @@ router.get('/:user_id?', function(req, res, next) {
     var character_id = req.query.character_id;
   var user_id = req.params.user_id;
 
-  //HACER UN QUERY PARA ASQUIRIR EL DI DEL USUARIO QUE DESEA DESBLOQUEAR EL CHARACTER
+  
   if(user_id)
   {
     if(character_id){

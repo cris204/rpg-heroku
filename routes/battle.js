@@ -24,7 +24,7 @@ var config = {
   idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
 };
 
-var client = new pg.Client(config);
+var client = new pg.Client();
 
 
 /* GET home page. */
@@ -34,7 +34,7 @@ router.get('/:users_id?', function(req, res, next) {
   var score1 = query.score1;
   var score2 = query.score2;
   var query_data=[];
-  client = new pg.Client(config);
+  client = new pg.Client();
   client.connect (function (err, client, done){
     if (err){return console.error('error runnning query', err);}
     if(users_id)

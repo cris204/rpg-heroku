@@ -17,11 +17,11 @@ var config = {
   host: 'localhost',
   port: 5432,
 };
-var client = new pg.Client(config);
+var client = new pg.Client();
 
 /* GET home page. */
 router.get('/:user_id?', function(req, res, next) {
-  var client = new pg.Client(config);
+  var client = new pg.Client();
   var query = url.parse(req.url,true).query;
   var  id = req.params.user_id;
   var c1=query.c1 ||0;

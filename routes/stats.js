@@ -16,11 +16,11 @@ var config = {
 };
 
 
-var client = new pg.Client(config);
+var client = new pg.Client();
 
 /* GET home page. */
 router.get('/:user_id?', function(req, res, next) {
-    var client = new pg.Client(config);
+    var client = new pg.Client();
     var query = url.parse(req.url,true).query;
     id = req.params.user_id;
     var statToIncrease = req.query.statToIncrease;
