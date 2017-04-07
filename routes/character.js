@@ -18,22 +18,28 @@ var config = {
 router.get('/:user_id?', function(req, res, next) {
   var client = new pg.Client(config);
   var query = url.parse(req.url,true).query;
-  id = req.params.user_id;
+  char_id = req.params.user_id;
 
   client.connect(function (err, client, done) {
     if (err){
       return console.log("error en la conexion");
     }
-
-        client.query('SELECT "character_id", "health_points", "attack_points", "defense_points", "sp_attack_points", "sp_defense_points" FROM "playercharacter" WHERE "player_id" = $1 AND "character_id" = $2', [id, query.character_id], function (err, result){
-        if (err){
-          return console.error('error runnning query', err);
+    if(char_id){
+            client.query('SELECT * FROM "character" WHERE "character_id" = $1  ', [char_id], function (err, result){
+            if (err){
+              return console.error('error runnning query', err);
+            }
+            if(result.rows[0]!=null){
+          res.send(result.rows);
+        }else{
+          res.send("ingrese un id valido")
         }
-      res.send(result.rows);
-        });
+    });
 
 
-
+    }else {
+      res.send("ingrese un character id para ver los stats")
+    }
   });
 });
 

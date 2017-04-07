@@ -62,25 +62,25 @@ router.get('/:users_id?', function(req, res, next) {
               for (var i = 0; i < result.rows.length; i++) {
                 leaderboard += (JSON.stringify(result.rows[i]) +'</br>')
               }
-              res.send("El usuario con id: " + winner_id + " es el ganador." +'</br>'+"El usuario con id: " + losser_id + " es el perdedor." +'</br>'+"El nuevo score de los usuario se presenta a continuación:" +'</br>'+'</br>'+leaderboard)
+              res.send("El usuario: " + winner_id + " es el ganador." +'</br>'+"El usuario : " + losser_id + " es el perdedor." +'</br>'+"Score global:" +'</br>'+'</br>'+leaderboard)
             });
           }
           else{
-            res.send("Aún no ha introducido lo scores. Ingreselos para poder saber quien gana y quien pierde")
+            res.send("introduce el score de los jugadores para determinar el resultado de la partida")
           }
         }
         else{
         //hacer un split para separar a varibale ne los dos ids que se necesitan.
-        res.send("Alguno de los IDs ingresados no es válido. Revise nuevamente los IDs válidos.")
+        res.send("verifica los id")
         return;
         }
       });
     }
     else{
-      res.send("Ingrese dos ids y su puntaje en la partida para emepzar la partida")
+      res.send("Ingrese dos ids y su puntaje en la partida para emepzar")
     }
   });
-  //HACER UN QUERY PARA OBTENER L RESULTADO D ELA PARTIA
+
 });
 
 function compare_scores(score1, score2, user_list)

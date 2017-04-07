@@ -5,10 +5,11 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { head: "RPG",
                         title: 'Servicios',
-                        UserGold: "Oro del usuario: http://localhost:3000/users/ (el id del usuario)",
-                        invenotry: "inventario :http://localhost:3000/inventory/(el id del usuario) ",
-                        item : "usar item::http://localhost:3000/inventory/(el id del usuario)?amount=(cantidad de items usados o conseguidos)&item_id=(id del item) ",
-                    purchases: 'Comprar:  http://localhost:3000/purchases/(id del usuario))?item=(id del item)'});
+                        Unlock: "desbloquear un personaje: http://localhost:3000/unlock/(id del jugador)?character_id=(id del character)",
+                        Stats: "modificar los stats de un character: http://localhost:3000/stats/(id del jugador)?character_id=(id del character)&statToIncrease=(stat a subir)",
+                        Team : "ver o modificar el team: http://localhost:3000/team/(id del jugador)?c1=(id del character)&c2=(id del character)&c3=(id del character) puedes cambiar un solo character o los 3 al mismo tiempo",
+                        Character : "mirar los stats bases de un character: http://localhost:3000/character/(id del character) ",
+                        Battle: 'batalla, saber ganador y perdedor:  http://localhost:3000/battle/(id primer jugador - id segundo jugador)?score1=(score del jugador 1 en esta partida)&score2=(score del jugador 2 en esta partida) los ids van separados por un "-"'});
 });
 
 module.exports = router;
