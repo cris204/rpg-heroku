@@ -15,14 +15,15 @@ var losser_id;
 var amount_valid_id=0;
 
 var config = {
-  user: 'neythggc', //env var: PGUSER
-  database: 'neythggc', //env var: PGDATABASE
-  password: 'SxB8mbKS7G_LukO8regsFmmwd1CUfeff', //env var: PGPASSWORD
-  host: 'stampy.db.elephantsql.com', // Server hosting the postgres database
+  user: 'postgres', //env var: PGUSER
+  database: 'rpg', //env var: PGDATABASE
+  password: 'cris0717', //env var: PGPASSWORD
+  host: 'localhost', // Server hosting the postgres database
   port: 5432, //env var: PGPORT
+
 };
 
-var client = new pg.Client(config);
+var client = new pg.Client();
 
 
 /* GET home page. */
@@ -32,9 +33,7 @@ router.get('/:users_id?', function(req, res, next) {
   var score1 = query.score1;
   var score2 = query.score2;
   var query_data=[];
-
-  client = new pg.Client(config);
-  
+  client = new pg.Client();
   client.connect (function (err, client, done){
     if (err){return console.error('error runnning query', err);}
     if(users_id)

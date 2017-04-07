@@ -5,16 +5,16 @@ var router = express.Router();
 /* GET users listing. */
 
 var config = {
-  user: 'neythggc', //env var: PGUSER
-  database: 'neythggc', //env var: PGDATABASE
-  password: 'SxB8mbKS7G_LukO8regsFmmwd1CUfeff', //env var: PGPASSWORD
-  host: 'stampy.db.elephantsql.com', // Server hosting the postgres database
+  user: 'postgres', //env var: PGUSER
+  database: 'rpg', //env var: PGDATABASE
+  password: 'cris0717', //env var: PGPASSWORD
+  host: 'localhost', // Server hosting the postgres database
   port: 5432, //env var: PGPORT
 };
 
-  var client = new pg.Client(config);
+  var client = new pg.Client();
 router.get('/:user_id?', function(req, res, next) {
-  var client = new pg.Client(config);
+  var client = new pg.Client();
   var query = url.parse(req.url,true).query;
   char_id = req.params.user_id;
 
