@@ -28,8 +28,6 @@ var app = express();
 var client = new pg.Client();
 
 
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
